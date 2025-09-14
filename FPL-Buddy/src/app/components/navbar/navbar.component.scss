@@ -1,0 +1,29 @@
+.navbar {
+  padding: 0rem 2rem;
+  background-color: #3f0f55;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.links {
+  color: #72b0f2;
+}
+
+.heading {
+  margin-left: 15px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #df8f20;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 1000;
+  padding: 0px;
+}

@@ -1,0 +1,41 @@
+.main {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  padding: 20px;
+  background-color: rgb(10, 10, 10);
+  max-height: 100%;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px 10px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:disabled {
+    background-color: #007bff;
+  }
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}

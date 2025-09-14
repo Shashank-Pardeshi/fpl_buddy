@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="search">
+    <input type="text'" placeholder="Player id" [(ngModel)]="playerId" />
+    <button class="btn" [disabled]="!playerId" (click)="searchPlayer()">
+      search
+    </button>
+  </div>
+
+  <div *ngFor="let ele of playerDataKeys" style="color: white">
+    {{ ele }} : {{ playerData.data[ele] }}
+  </div>
+</div>

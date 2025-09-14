@@ -1,0 +1,9 @@
+<div class="main">
+  <button
+    *ngFor="let ele of eventList"
+    class="btn"
+    (click)="updateData($event, ele)"
+  >
+    {{ ele }}
+  </button>
+</div>
