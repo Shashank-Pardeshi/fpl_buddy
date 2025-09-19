@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class PlayersService {
   constructor(private http: HttpClient) {}
 
-  getPlayerData(id: number) {
+  getPlayerDataById(id: number) {
     return this.http.get(`http://localhost:3000/players/getPlayerById/${id}`);
   }
 }

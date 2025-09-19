@@ -1,0 +1,35 @@
+.player-data-info {
+  background-color: rgb(132, 111, 228);
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  color: white;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: blueviolet;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+.active {
+  color: #000000;
+}
+
+.even {
+  background-color: rgba(255, 255, 255, 0.15); /* light overlay */
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.odd {
+  background-color: rgba(0, 0, 0, 0.15); /* darker overlay */
+  padding: 8px 12px;
+  border-radius: 6px;
+}

@@ -13,11 +13,4 @@ import { PlayersService } from '../../services/players.service';
 export class NavbarComponent {
   playerId: any = '';
   constructor(private playersService: PlayersService) {}
-
-  searchPlayer() {
-    console.log('searching');
-    this.playersService.getPlayerData(this.playerId).subscribe((data) => {
-      console.log('player', data);
-    });
-  }
 }

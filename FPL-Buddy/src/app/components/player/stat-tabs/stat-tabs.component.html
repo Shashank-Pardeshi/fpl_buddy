@@ -1,0 +1,40 @@
+<div class="player-data-info">
+  <div class="tabs">
+    <div [class.active]="tab == 'stats'" (click)="changeTab($event, 'stats')">
+      <b>Stats</b>
+    </div>
+    <div
+      [class.active]="tab == 'attacking'"
+      (click)="changeTab($event, 'attacking')"
+    >
+      <b>Attacking</b>
+    </div>
+    <div
+      [class.active]="tab == 'defence'"
+      (click)="changeTab($event, 'defence')"
+    >
+      <b>Defence</b>
+    </div>
+    <div
+      [class.active]="tab == 'goalkeeping'"
+      (click)="changeTab($event, 'goalkeeping')"
+    >
+      <b>Goalkeeping</b>
+    </div>
+    <div
+      [class.active]="tab == 'fpl_data'"
+      (click)="changeTab($event, 'fpl_data')"
+    >
+      <b>FPL Data</b>
+    </div>
+  </div>
+  <div style="padding: 15px 15px">
+    <ng-container
+      *ngFor="let ele of playerDataKeys; let even = even; let i = index"
+    >
+      <div [ngClass]="even ? 'even' : 'odd'" style="color: black">
+        <b>{{ i + 1 }}. {{ ele | pascalCasePipe }} : {{ player[tab][ele] }}</b>
+      </div>
+    </ng-container>
+  </div>
+</div>
