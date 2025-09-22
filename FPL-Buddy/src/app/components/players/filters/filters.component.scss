@@ -1,0 +1,40 @@
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 30px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  color: rgb(166, 229, 39);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.select {
+  width: 150px;
+  height: 20px;
+  background-color: rgb(204, 154, 90);
+  font-weight: bold;
+  border-radius: 8px;
+  option {
+    font-weight: bold;
+  }
+}
+
+.reset {
+  background-color: rgb(204, 154, 90);
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 22px;
+}

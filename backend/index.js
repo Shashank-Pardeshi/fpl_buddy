@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import homeRoutes from "./routes/homeRoutes.js";
 import playersRoutes from "./routes/playersRoutes.js";
 import addDataRoutes from "./routes/addDbDataRoutes.js";
+import teamsRouter from "./routes/teamsRoutes.js";
 
 const app = express();
 app.use(cors());
@@ -19,5 +20,6 @@ await mongoose
 app.use("/players", playersRoutes);
 app.use("/api", homeRoutes);
 app.use("/update", addDataRoutes);
+app.use("/teams", teamsRouter);
 
 app.listen(3000, () => console.log("Server running on port 3000"));

@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AddDbDataComponent } from './components/add-db-data/add-db-data.component';
-import { PlayerPageComponent } from './components/player/player-page/player-page.component';
+import { PlayerPageComponent } from './components/player-page/player-page.component';
+import { PlayersComponent } from './components/players/players.component';
 
 export const routes: Routes = [
   {
@@ -18,5 +19,10 @@ export const routes: Routes = [
     path: 'player/:id',
     component: PlayerPageComponent,
     title: 'Player data',
+  },
+  {
+    path: 'players',
+    component: PlayersComponent,
+    title: 'Players',
   },
 ];

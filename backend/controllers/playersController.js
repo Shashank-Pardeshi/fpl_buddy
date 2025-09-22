@@ -8,6 +8,38 @@ export const getAllPlayers = async (req, res) => {
   res.json(docs);
 };
 
+export const getAllElementTypes = async (req, res) => {
+  const db = mongoose.connection.db;
+  const elementTypes = db.collection("element_types");
+  const docs = await elementTypes.find({}).toArray();
+  res.json(docs);
+};
+
+export const getPlayerByTeamAndPositionAndPrice = async (req, res) => {
+  const { team, position, price } = req.params;
+
+  const query = {};
+
+  if (team !== "All") {
+    query.team = parseInt(team);
+  }
+
+  if (position !== "All") {
+    query.element_type = parseInt(position);
+  }
+
+  if (price !== "Unlimited") {
+    query.now_cost = { $lte: parseInt(price) };
+  }
+
+  const players = await mongoose.connection.db
+    .collection("elements")
+    .find(query)
+    .toArray();
+
+  res.json(players);
+};
+
 export const getPlayerById = async (req, res) => {
   const { id } = req.params;
   // console.log("Fetching player with ID:", id);
@@ -22,6 +54,7 @@ export const getPlayerById = async (req, res) => {
         team_code: player.team_code,
         team: player.team,
         team_name: player.team_code,
+        team_photo: `https://resources.premierleague.com/premierleague/badges/70/t${player.team_code}.png`,
         position: player.element_type,
         photo: `https://resources.premierleague.com/premierleague/photos/players/110x140/p${player.code}.png`,
         element_type: player.element_type,

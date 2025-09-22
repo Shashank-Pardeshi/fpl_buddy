@@ -1,0 +1,16 @@
+<div class="table">
+  <table>
+    <thead>
+      <tr class="headings">
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody class="list">
+      <tr *ngFor="let player of players; let even = even; let i = index">
+        <td [ngClass]="even ? 'even' : 'odd'">
+          {{ player?.first_name }} {{ player?.second_name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

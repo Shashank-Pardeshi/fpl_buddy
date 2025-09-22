@@ -1,0 +1,34 @@
+.player-data-image {
+  display: flex;
+  flex-direction: column;
+  background-color: #35e578;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #000000;
+
+  .player-photo-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .player-photo {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .team-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 60px;
+      height: 60px;
+      // border-radius: 50%;
+      background-color: #35e578; // makes it pop
+      padding: 3px;
+    }
+  }
+}

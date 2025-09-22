@@ -1,0 +1,19 @@
+.matches {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(52, 52, 192);
+  align-items: center;
+  border-radius: 10px;
+}
+
+.heading {
+  background-color: aqua;
+  color: white;
+  font-size: 25px;
+  //   width: 100%;
+}
+
+.match {
+  background-color: rgb(249, 178, 84);
+  //   width: 100%;
+}

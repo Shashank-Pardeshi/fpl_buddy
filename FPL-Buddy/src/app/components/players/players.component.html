@@ -1,0 +1,12 @@
+<div class="main">
+  <app-filters
+    [(selectedTeam)]="selectedTeam"
+    [(selectedPosition)]="selectedPosition"
+    [(selectedPrice)]="selectedPrice"
+  ></app-filters>
+  <app-table
+    [selectedTeam]="selectedTeam"
+    [selectedPosition]="selectedPosition"
+    [selectedPrice]="selectedPrice"
+  ></app-table>
+</div>

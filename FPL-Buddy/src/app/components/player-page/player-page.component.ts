@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PascalCasePipe } from '../../../pipes/pascal-case.pipe';
-import { PlayersService } from '../../../services/players.service';
-import { PlayerCardComponent } from '../player-card/player-card.component';
-import { StatTabsComponent } from '../stat-tabs/stat-tabs.component';
+import { PascalCasePipe } from './../../pipes/pascal-case.pipe';
+import { PlayersService } from './../../services/players.service';
+import { PlayerCardComponent } from './player-card/player-card.component';
+import { StatTabsComponent } from './stat-tabs/stat-tabs.component';
 import { ActivatedRoute } from '@angular/router';
+import { MatchesComponent } from './matches/matches.component';
 
 @Component({
   selector: 'app-player-page',
   standalone: true,
-  imports: [CommonModule, PlayerCardComponent, StatTabsComponent],
+  imports: [
+    CommonModule,
+    PlayerCardComponent,
+    StatTabsComponent,
+    MatchesComponent,
+  ],
   templateUrl: './player-page.component.html',
   styleUrl: './player-page.component.scss',
 })

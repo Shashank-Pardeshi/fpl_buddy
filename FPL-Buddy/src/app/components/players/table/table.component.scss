@@ -1,0 +1,33 @@
+.table {
+  background-color: #150e74;
+}
+
+.headings {
+  // display: flex;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: space-around;
+  background-color: blueviolet;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 100vw;
+  font-weight: 800;
+  // padding: 10px 0px;
+}
+
+.list {
+  background-color: #846fe4;
+  border-radius: 10px;
+}
+
+.even {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.odd {
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 8px 12px;
+  border-radius: 6px;
+}

@@ -1,4 +1,5 @@
 <div class="player-data" *ngIf="playerData">
   <app-player-card [playerData]="playerData?.data" class="player_side_bar" />
   <app-stat-tabs [playerData]="playerData?.data" class="player_tab" />
+  <app-matches class="player-matches"></app-matches>
 </div>

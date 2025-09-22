@@ -1,0 +1,30 @@
+<div class="filters">
+  <div class="filter-item">
+    <label for="teams" class="label">Team:</label>
+    <select id="teams" [(ngModel)]="selectedTeam" class="select">
+      <option value="All">All</option>
+      <option *ngFor="let team of teams?.data" [value]="team.id">
+        {{ team.name }}
+      </option>
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="positions" class="label">Position:</label>
+    <select id="positions" [(ngModel)]="selectedPosition" class="select">
+      <option value="All">All</option>
+      <option *ngFor="let position of positions" [value]="position.id">
+        {{ position.plural_name }}
+      </option>
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="positions" class="label">Price:</label>
+    <select id="price" [(ngModel)]="selectedPrice" class="select">
+      <option value="Unlimited">Unlimited</option>
+      <option *ngFor="let price of prices; let i = index" [value]="price">
+        Upto {{ price }}M
+      </option>
+    </select>
+  </div>
+  <button class="reset" *ngIf="resetFlag()" (click)="reset()">Reset</button>
+</div>
