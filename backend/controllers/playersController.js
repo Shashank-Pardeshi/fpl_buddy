@@ -8,6 +8,17 @@ export const getAllPlayers = async (req, res) => {
   res.json(docs);
 };
 
+export const getTopPlayers = async (req, res) => {
+  const db = mongoose.connection.db;
+  const players = db.collection("elements");
+  const docs = await players
+    .find({})
+    .sort({ event_points: -1 })
+    .limit(10)
+    .toArray();
+  res.json(docs);
+};
+
 export const getAllElementTypes = async (req, res) => {
   const db = mongoose.connection.db;
   const elementTypes = db.collection("element_types");

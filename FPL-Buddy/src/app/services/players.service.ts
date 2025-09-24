@@ -28,4 +28,8 @@ export class PlayersService {
   getAllElementTypes() {
     return this.http.get('http://localhost:3000/players/getAllElementTypes');
   }
+
+  getTopPlayers() {
+    return this.http.get('http://localhost:3000/players/getTopPlayers');
+  }
 }

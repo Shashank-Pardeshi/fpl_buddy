@@ -11,4 +11,9 @@ export class AddDbDataService {
     const apiUrl = `http://localhost:3000/update/${api}`;
     return this.http.get(apiUrl);
   }
+
+  updateNewData(api: string) {
+    const apiUrl = `http://localhost:3000/update/new/${api}`;
+    return this.http.get(apiUrl);
+  }
 }

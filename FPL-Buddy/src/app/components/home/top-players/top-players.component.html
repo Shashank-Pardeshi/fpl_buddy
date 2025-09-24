@@ -1,0 +1,25 @@
+<div class="players">
+  <div
+    *ngFor="let player of topPlayers"
+    class="player-card"
+    (click)="goToPlayer(player.id)"
+  >
+    <img
+      [src]="
+        'https://resources.premierleague.com/premierleague/photos/players/110x140/p' +
+        player.code +
+        '.png'
+      "
+      alt="{{ player.name }}"
+      class="player-photo"
+    />
+    <div class="player-info">
+      <p class="name">{{ player.second_name }}</p>
+      <p class="team-position">
+        {{ teamsService.getTeamShortName(player?.team) }} -
+        {{ player.element_type | codeToPosition : "short" }}
+      </p>
+      <p class="points">Points: {{ player?.event_points }}</p>
+    </div>
+  </div>
+</div>

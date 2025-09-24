@@ -3,45 +3,30 @@ import { FormsModule } from '@angular/forms';
 import { HomeService } from '../../services/home.service';
 import { CommonModule } from '@angular/common';
 import { PlayersService } from '../../services/players.service';
-import { Router } from '@angular/router';
-import { PascalCasePipe } from '../../pipes/pascal-case.pipe';
+import { Router, RouterLink } from '@angular/router';
+import { UpcomingFixturesComponent } from './upcoming-fixtures/upcoming-fixtures.component';
+import { TopPlayersComponent } from './top-players/top-players.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    RouterLink,
+    UpcomingFixturesComponent,
+    TopPlayersComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   playerId!: number;
+  fixtureId = [1, 2, 3, 4, 5];
 
   constructor(
     private homeService: HomeService,
     private playersService: PlayersService,
     private router: Router
   ) {}
-
-  // apiList = {
-  //   'General Information': this.homeService.getGeneralInformation(),
-  //   'Player Data': this.homeService.getPlayerData(this.playerId),
-  //   'Fixtures-': this.homeService.getFixtures(),
-  //   'Game Week Live Data': this.homeService.getGameWeekLiveData(this.playerId),
-  //   'Manager History': this.homeService.getManagerHistory(this.playerId),
-  //   'Manager Data': this.homeService.getManagerData(this.playerId),
-  //   'League Standings': this.homeService.getleagueStandings(this.playerId),
-  //   'My Teams': this.homeService.getMyTeams(this.playerId),
-  //   'Team Per Week': this.homeService.getTeamPerWeek(
-  //     this.playerId,
-  //     this.playerId
-  //   ),
-  //   'Event Status': this.homeService.getEventStatus(),
-  //   'Dream Team': this.homeService.getDreamTeam(this.playerId),
-  //   'Set Piece Takers': this.homeService.getSetPieceTakers(),
-  // };
-
-  // list = Object.keys(this.apiList);
-  goToPlayer() {
-    this.router.navigateByUrl(`player/${this.playerId}`);
-  }
 }

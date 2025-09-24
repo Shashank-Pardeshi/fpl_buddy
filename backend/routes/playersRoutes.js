@@ -4,6 +4,7 @@ import {
   getAllPlayers,
   getPlayerById,
   getPlayerByTeamAndPositionAndPrice,
+  getTopPlayers,
 } from "../controllers/playersController.js";
 
 const playersRouter = express.Router();
@@ -18,5 +19,7 @@ playersRouter.get(
 );
 
 playersRouter.get("/getAllElementTypes", getAllElementTypes);
+
+playersRouter.get("/getTopPlayers", getTopPlayers);
 
 export default playersRouter;

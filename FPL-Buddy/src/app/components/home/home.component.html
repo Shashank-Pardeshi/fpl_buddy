@@ -1,8 +1,77 @@
 <div class="main">
-  <div class="search">
-    <input type="number" placeholder="Player id" [(ngModel)]="playerId" />
-    <button class="btn" [disabled]="!playerId" (click)="goToPlayer()">
-      search
-    </button>
+  <div class="landing-page">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Build Your Winning Fantasy Premier League Team</h1>
+        <p>
+          Track stats, compare players, and optimize your FPL squad with
+          real-time data.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn primary">Get Started</button>
+          <button class="btn secondary">View Players</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Stats / Highlights -->
+    <section class="highlights">
+      <h2>Top Players This Week</h2>
+      <div class="players">
+        <app-top-players></app-top-players>
+      </div>
+
+      <h2>Upcoming Fixtures</h2>
+      <div class="fixtures">
+        <app-upcoming-fixtures></app-upcoming-fixtures>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature-list">
+        <div class="feature-card">
+          <h3>📊 Player Stats</h3>
+          <p>Compare players with detailed stats and insights.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🏆 Team Builder</h3>
+          <p>Create your perfect squad within budget limits.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔔 Alerts & Tips</h3>
+          <p>Stay updated on injuries, suspensions, and deadlines.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📅 Fixture Difficulty</h3>
+          <p>Plan ahead with our fixture difficulty tracker.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Community -->
+    <!-- <section class="community">
+      <h2>Latest Updates</h2>
+      <div class="posts">
+        <div class="post-card" *ngFor="let post of posts">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt }}</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 FPL Website. All Rights Reserved.</p>
+      <nav>
+        <a routerLink="/players">Players</a>
+        <a routerLink="/fixtures">Fixtures</a>
+        <a routerLink="/teams">Teams</a>
+        <!-- <a routerLink="/about">About</a> -->
+      </nav>
+    </footer>
   </div>
 </div>

@@ -28,6 +28,8 @@ export class AddDbDataComponent {
     'phases',
   ];
 
+  newlist = ['fixtures'];
+
   updateData(event: Event, api: string) {
     console.log(api);
     this.addDbDataService.updateData(api).subscribe({
@@ -38,6 +40,20 @@ export class AddDbDataComponent {
       error: (error) => {
         console.error('Error updating data', error);
         this.toast.error('Error updating  data');
+      },
+    });
+  }
+
+  updateNewData(event: Event, api: string) {
+    console.log(api);
+    this.addDbDataService.updateNewData(api).subscribe({
+      next: (response) => {
+        console.log('New Data updated successfully', response);
+        this.toast.success('New Data updated successfully');
+      },
+      error: (error) => {
+        console.error('Error updating new data', error);
+        this.toast.error('Error updating new data');
       },
     });
   }

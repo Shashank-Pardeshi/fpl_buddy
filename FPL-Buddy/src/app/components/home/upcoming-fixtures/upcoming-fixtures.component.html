@@ -1,0 +1,27 @@
+<div class="fixtures">
+  <div class="fixture-card" *ngFor="let fixture of fixtures">
+    <div class="team">
+      <img
+        [src]="
+          'https://resources.premierleague.com/premierleague/badges/70/t' +
+          teamsService.getTeamCodeFromId(fixture.team_h) +
+          '.png'
+        "
+        alt="{{ fixture.team_h }}"
+        class="team-logo"
+      />
+    </div>
+    <div class="vs">vs</div>
+    <div class="team">
+      <img
+        [src]="
+          'https://resources.premierleague.com/premierleague/badges/70/t' +
+          teamsService.getTeamCodeFromId(fixture.team_a) +
+          '.png'
+        "
+        alt="{{ teamsService.getTeamShortName(fixture.team_a) }}"
+        class="team-logo"
+      />
+    </div>
+  </div>
+</div>

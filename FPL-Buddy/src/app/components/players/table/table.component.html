@@ -15,7 +15,6 @@
             class="heading-cell"
             *ngFor="let col of columns"
             cdkDrag
-            [cdkDragStartDelay]="1000"
             [ngClass]="{ 'name-cell': col.key === 'name' }"
             (click)="sortByParameter($event, col.key)"
           >

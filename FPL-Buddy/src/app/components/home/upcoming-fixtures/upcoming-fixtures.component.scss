@@ -1,0 +1,23 @@
+.fixtures {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .fixture-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(0, 255, 135, 0.2);
+
+    .team-logo {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

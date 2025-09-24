@@ -6,4 +6,11 @@
   >
     {{ ele }}
   </button>
+  <button
+    *ngFor="let ele of newlist"
+    class="btn"
+    (click)="updateNewData($event, ele)"
+  >
+    {{ ele }}
+  </button>
 </div>

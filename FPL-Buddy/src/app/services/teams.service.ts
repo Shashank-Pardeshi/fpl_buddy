@@ -38,4 +38,14 @@ export class TeamsService {
   getTeam(id: number): { name: string; shortName: string } {
     return this.teamMap[id] || { name: 'Unknown', shortName: 'UNK' };
   }
+
+  getTeamCodeFromId(id: number): number {
+    const team = this.teams.find((t: any) => t.id === id);
+    return team ? team.code : -1;
+  }
+
+  getTeamIdFromCode(code: string): number {
+    const team = this.teams.find((t: any) => t.code === code);
+    return team ? team.id : -1;
+  }
 }
