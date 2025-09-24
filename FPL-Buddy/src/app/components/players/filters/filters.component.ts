@@ -40,14 +40,7 @@ export class FiltersComponent {
   }
 
   getAllTeams() {
-    this.teamsService.getAllTeams().subscribe({
-      next: (res) => {
-        this.teams = res;
-      },
-      error: (error) => {
-        console.log('Error fetching teams data', error);
-      },
-    });
+    this.teams = this.teamsService.getAllTeams();
   }
 
   getAllPositions() {

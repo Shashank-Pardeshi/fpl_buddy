@@ -1,5 +1,24 @@
 .table {
-  background-color: #150e74;
+  // background-color: #817bcb;
+  height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  border-radius: 10px;
+}
+
+.table-wrapper {
+  max-height: 80vh;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 3; // higher than table body
 }
 
 .headings {
@@ -7,27 +26,83 @@
   // flex-direction: row;
   // align-items: center;
   // justify-content: space-around;
-  background-color: blueviolet;
+  background-color: rgb(210, 132, 23);
   border-radius: 10px;
   font-size: 15px;
   width: 100vw;
   font-weight: 800;
-  // padding: 10px 0px;
+  color: rgb(214, 241, 115);
+}
+
+.no-players {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px;
 }
 
 .list {
   background-color: #846fe4;
   border-radius: 10px;
+  color: black;
+  font-weight: bold;
 }
 
 .even {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgb(79, 180, 213);
   padding: 8px 12px;
   border-radius: 6px;
+  // height: 30px;
 }
 
 .odd {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(72, 133, 137);
   padding: 8px 12px;
   border-radius: 6px;
+  // height: 30px;
+}
+
+.heading-cell {
+  max-width: 200px;
+  height: 30px;
+}
+
+.body-cell {
+  max-width: 250px;
+  min-width: 100px;
+  text-align: center;
+  // vertical-align: middle;
+}
+
+.name-cell {
+  max-width: 250px;
+  min-width: 250px;
+  position: sticky;
+  left: 0;
+  background-color: rgb(210, 132, 23);
+  z-index: 2;
+}
+
+thead th:first-child {
+  z-index: 4;
+  left: 0;
+}
+
+.subtext {
+  font-size: 12px;
+  color: #2b3a36;
+}
+
+.cdk-drag-preview {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.heading-cell {
+  cursor: grab;
 }

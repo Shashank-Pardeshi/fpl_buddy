@@ -3,7 +3,7 @@
     <label for="teams" class="label">Team:</label>
     <select id="teams" [(ngModel)]="selectedTeam" class="select">
       <option value="All">All</option>
-      <option *ngFor="let team of teams?.data" [value]="team.id">
+      <option *ngFor="let team of teams" [value]="team.id">
         {{ team.name }}
       </option>
     </select>
@@ -22,7 +22,7 @@
     <select id="price" [(ngModel)]="selectedPrice" class="select">
       <option value="Unlimited">Unlimited</option>
       <option *ngFor="let price of prices; let i = index" [value]="price">
-        Upto {{ price }}M
+        Upto {{ price / 10 }}
       </option>
     </select>
   </div>

@@ -16,5 +16,5 @@
   <div>
     <b>{{ player?.personal_details.name }}</b>
   </div>
-  <div>{{ elementTypes[a - 1] }}</div>
+  <div>{{ player?.personal_details.element_type | codeToPosition }}</div>
 </div>

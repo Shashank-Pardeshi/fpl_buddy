@@ -5,9 +5,37 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class TeamsService {
-  constructor(private http: HttpClient) {}
+  private teamMap: Record<number, { name: string; shortName: string }> = {};
+  teams: any;
+
+  constructor(private http: HttpClient) {
+    this.http
+      .get<any[]>('http://localhost:3000/teams/getAllTeams')
+      .subscribe((teams) => {
+        this.teams = teams;
+        this.teamMap = teams.reduce((acc, t) => {
+          acc[t.id] = {
+            name: t.name,
+            shortName: t.short_name,
+          };
+          return acc;
+        }, {} as Record<number, { name: string; shortName: string }>);
+      });
+  }
 
   getAllTeams() {
-    return this.http.get('http://localhost:3000/teams/getAllTeams');
+    return this.teams;
+  }
+
+  getTeamName(id: number): string {
+    return this.teamMap[id]?.name || 'Unknown';
+  }
+
+  getTeamShortName(id: number): string {
+    return this.teamMap[id]?.shortName || 'UNK';
+  }
+
+  getTeam(id: number): { name: string; shortName: string } {
+    return this.teamMap[id] || { name: 'Unknown', shortName: 'UNK' };
   }
 }
