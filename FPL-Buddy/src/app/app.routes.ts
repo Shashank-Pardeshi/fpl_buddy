@@ -4,6 +4,8 @@ import { AddDbDataComponent } from './components/add-db-data/add-db-data.compone
 import { PlayerPageComponent } from './components/player-page/player-page.component';
 import { PlayersComponent } from './components/players/players.component';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
+import { FixtureDifficultyBoxComponent } from './components/fixtures/fixture-difficulty-box/fixture-difficulty-box.component';
+import { FixturesBoxComponent } from './components/fixtures/fixtures-box/fixtures-box.component';
 
 export const routes: Routes = [
   {

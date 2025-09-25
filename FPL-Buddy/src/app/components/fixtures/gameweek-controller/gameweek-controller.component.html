@@ -1,0 +1,17 @@
+<div class="gameweek-navigator">
+  <button
+    (click)="onGameweekChange($event, 'prev')"
+    [disabled]="gameweek() <= 1"
+  >
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <span>Gameweek - {{ gameweek() }}</span>
+
+  <button
+    (click)="onGameweekChange($event, 'next')"
+    [disabled]="gameweek() >= 38"
+  >
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>

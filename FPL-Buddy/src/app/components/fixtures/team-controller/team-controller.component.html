@@ -1,0 +1,10 @@
+<div class="teams">
+  <div
+    *ngFor="let t of teamArray"
+    class="team"
+    (click)="selectTeam($event, t)"
+    [class.active]="t['id'] == team()"
+  >
+    {{ t?.["name"] }}
+  </div>
+</div>

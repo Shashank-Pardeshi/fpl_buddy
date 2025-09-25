@@ -1,0 +1,43 @@
+.fixture {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 20px;
+  height: 30px;
+
+  //   border-bottom: 1px solid #ccc;
+}
+
+.home-team {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  width: 200px;
+  justify-content: flex-end;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.away-team {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  width: 200px;
+  justify-content: flex-start;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.score {
+  color: rgb(228, 123, 37);
+  font-weight: bolder;
+  font-size: 20px;
+}

@@ -1,0 +1,47 @@
+<div>
+  <div *ngFor="let group of groupedMatches | keyvalue">
+    <h3 style="color: rgb(234, 181, 22)">
+      {{ group.key | date : "fullDate" }}
+    </h3>
+    <div *ngFor="let fixture of group.value" class="fixture">
+      <div class="home-team">
+        <div>{{ teamsService.getTeamName(fixture.team_h) }}</div>
+        <img
+          [src]="
+            'https://resources.premierleague.com/premierleague/badges/70/t' +
+            teamsService.getTeamCodeFromId(fixture.team_h) +
+            '.png'
+          "
+          alt="{{ teamsService.getTeamName(fixture.team_h) }}"
+          width="20"
+          height="20"
+        />
+      </div>
+      <div
+        style="color: rgb(228, 123, 37)"
+        *ngIf="!fixture.finished; else vs"
+        class="score"
+      >
+        <b>{{ fixture.kickoff_time | date : "hh:mm" }}</b>
+      </div>
+      <ng-template #vs
+        ><div class="score">
+          {{ fixture.team_h_score }} - {{ fixture.team_a_score }}
+        </div></ng-template
+      >
+      <div class="away-team">
+        <img
+          [src]="
+            'https://resources.premierleague.com/premierleague/badges/70/t' +
+            teamsService.getTeamCodeFromId(fixture.team_a) +
+            '.png'
+          "
+          alt="{{ teamsService.getTeamName(fixture.team_a) }}"
+          width="20"
+          height="20"
+        />
+        <div>{{ teamsService.getTeamName(fixture.team_a) }}</div>
+      </div>
+    </div>
+  </div>
+</div>

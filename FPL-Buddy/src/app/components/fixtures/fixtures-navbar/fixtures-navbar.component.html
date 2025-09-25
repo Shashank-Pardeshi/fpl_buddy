@@ -1,0 +1,31 @@
+<div class="nav-bar">
+  <div class="filters">
+    <div
+      class="item"
+      [class.active]="gameweek() != 0"
+      (click)="switchGameweek()"
+    >
+      Gameweek
+    </div>
+    <div class="item" [class.active]="team() != 0" (click)="switchTeam()">
+      Teams
+    </div>
+  </div>
+
+  <div class="links">
+    <div
+      class="item"
+      (click)="changeTag($event, 'fixtures')"
+      [class.active]="tab() == 'fixtures'"
+    >
+      Fixtures
+    </div>
+    <div
+      class="item"
+      (click)="changeTag($event, 'fixtures-difficulty')"
+      [class.active]="tab() == 'fixtures-difficulty'"
+    >
+      Fixture Difficulty
+    </div>
+  </div>
+</div>

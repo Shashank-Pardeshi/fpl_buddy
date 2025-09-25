@@ -1,1 +1,20 @@
-<p>fixtures works!</p>
+<div class="main">
+  <app-fixtures-navbar
+    [(tab)]="tab"
+    [(gameweek)]="gameweek"
+    [(team)]="team"
+  ></app-fixtures-navbar>
+  <app-team-controller [(team)]="team" *ngIf="team != 0"></app-team-controller>
+  <app-gameweek-controller
+    [(gameweek)]="gameweek"
+    *ngIf="gameweek != 0"
+  ></app-gameweek-controller>
+  <app-fixtures-box
+    *ngIf="tab == 'fixtures'"
+    [gameweek]="gameweek"
+    [team]="team"
+  ></app-fixtures-box>
+  <app-fixture-difficulty-box
+    *ngIf="tab == 'fixtures-difficulty'"
+  ></app-fixture-difficulty-box>
+</div>
