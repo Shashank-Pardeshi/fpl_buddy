@@ -1,0 +1,25 @@
+<div class="main" *ngIf="playerData">
+  <div
+    *ngFor="let match of playerData?.history"
+    [ngClass]="home_away_apply(match)"
+    class="team"
+  >
+    <div>{{ match.event_name }}</div>
+    <img
+      [src]="
+        'https://resources.premierleague.com/premierleague/badges/70/t' +
+        getTeamCode(match) +
+        '.png'
+      "
+      alt="{{ match.team_h }}"
+      class="team-logo"
+    />
+    <div>
+      {{
+        this.teamsService.getTeamShortName(
+          this.teamsService.getTeamIdFromCode(getTeamCode(match))
+        )
+      }}
+    </div>
+  </div>
+</div>

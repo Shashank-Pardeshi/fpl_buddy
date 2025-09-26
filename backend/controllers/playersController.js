@@ -1,5 +1,19 @@
 import mongoose, { now } from "mongoose";
 import { format } from "mysql2";
+import fetch from "node-fetch";
+
+export const getPlayerFixturesDetailsByPlayerId = async (req, res) => {
+  const { playerId } = req.params;
+  // console.log(playerId);
+  const playerData = await fetch(
+    `https://fantasy.premierleague.com/api/element-summary/${parseInt(
+      playerId
+    )}`
+  );
+  // console.log(playerData);
+  let data = await playerData.json();
+  res.json(data);
+};
 
 export const getAllPlayers = async (req, res) => {
   const db = mongoose.connection.db;

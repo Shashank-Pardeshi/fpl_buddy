@@ -13,7 +13,7 @@ import { error } from 'node:console';
 })
 export class UpcomingFixturesComponent {
   fixtures: any;
-  currentGameweek = 1;
+  currentGameweek = 0;
   constructor(
     private fixturesService: FixturesService,
     public teamsService: TeamsService
@@ -21,18 +21,19 @@ export class UpcomingFixturesComponent {
     this.fixturesService.getCurrentGameweek().subscribe({
       next: (data: any) => {
         this.currentGameweek = data;
+        this.fixturesService
+          .getFixturesByEvent(this.currentGameweek)
+          .subscribe({
+            next: (data) => {
+              this.fixtures = data;
+            },
+            error: (error) => {
+              console.error('There was an error!', error);
+            },
+          });
       },
       error: (error) => {
         console.log(error);
-      },
-    });
-    this.fixturesService.getFixturesByEvent(this.currentGameweek).subscribe({
-      next: (data) => {
-        // console.log(data);
-        this.fixtures = data;
-      },
-      error: (error) => {
-        console.error('There was an error!', error);
       },
     });
   }

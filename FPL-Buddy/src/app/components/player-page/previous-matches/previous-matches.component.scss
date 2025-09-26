@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 90vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: rgb(16, 6, 104);
+  height: 150px;
+  padding: 20px 10px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  min-width: 120px;
+  gap: 5px;
+  border-radius: 80px;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+.home {
+  background-color: green;
+}
+
+.away {
+  background-color: red;
+}

@@ -4,6 +4,7 @@ import {
   getAllPlayers,
   getPlayerById,
   getPlayerByTeamAndPositionAndPrice,
+  getPlayerFixturesDetailsByPlayerId,
   getTopPlayers,
 } from "../controllers/playersController.js";
 
@@ -21,5 +22,10 @@ playersRouter.get(
 playersRouter.get("/getAllElementTypes", getAllElementTypes);
 
 playersRouter.get("/getTopPlayers", getTopPlayers);
+
+playersRouter.get(
+  "/playerFixturesDetailsByPlayerId/:playerId",
+  getPlayerFixturesDetailsByPlayerId
+);
 
 export default playersRouter;

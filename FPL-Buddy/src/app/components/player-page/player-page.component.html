@@ -1,5 +1,9 @@
-<div class="player-data" *ngIf="playerData">
-  <app-player-card [playerData]="playerData?.data" class="player_side_bar" />
-  <app-stat-tabs [playerData]="playerData?.data" class="player_tab" />
-  <app-matches class="player-matches"></app-matches>
+<div class="main">
+  <div class="player-data" *ngIf="playerData">
+    <app-player-card [playerData]="playerData?.data" class="player_side_bar" />
+    <app-stat-tabs [playerData]="playerData?.data" class="player_tab" />
+    <!-- <app-matches class="player-matches"></app-matches> -->
+  </div>
+  <app-previous-matches></app-previous-matches>
+  <app-future-matches></app-future-matches>
 </div>

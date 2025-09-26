@@ -32,4 +32,10 @@ export class PlayersService {
   getTopPlayers() {
     return this.http.get('http://localhost:3000/players/getTopPlayers');
   }
+
+  getPlayerDetailsByPlayerId(playerId: number) {
+    return this.http.get(
+      `http://localhost:3000/players/playerFixturesDetailsByPlayerId/${playerId}`
+    );
+  }
 }

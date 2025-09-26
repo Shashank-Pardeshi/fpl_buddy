@@ -44,7 +44,7 @@ export class TeamsService {
     return team ? team.code : -1;
   }
 
-  getTeamIdFromCode(code: string): number {
+  getTeamIdFromCode(code: number): number {
     const team = this.teams.find((t: any) => t.code === code);
     return team ? team.id : -1;
   }
